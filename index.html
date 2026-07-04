@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quixote Vassilakis</title>
-  <meta name="description" content="Quixote Vassilakis works across organizational behavior, cultural research, coaching, recruiting operations, and people analytics." />
+  <meta name="description" content="Quixote Vassilakis is a skills transformation and organizational development professional working across learning, talent, and data-informed program management." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,58 +16,75 @@
       --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
       --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
       --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-hero: clamp(3rem, 1rem + 6vw, 5.5rem);
+
+      --space-1: 0.25rem;
       --space-2: 0.5rem;
       --space-3: 0.75rem;
       --space-4: 1rem;
+      --space-5: 1.25rem;
       --space-6: 1.5rem;
       --space-8: 2rem;
       --space-10: 2.5rem;
       --space-12: 3rem;
       --space-16: 4rem;
+      --space-20: 5rem;
+
       --radius-sm: 0.375rem;
       --radius-md: 0.5rem;
       --radius-lg: 0.75rem;
       --radius-xl: 1rem;
-      --color-bg: #f7f6f2;
-      --color-surface: #f9f8f5;
-      --color-surface-2: #fbfbf9;
-      --color-surface-offset: #f0ede7;
-      --color-border: #d7d3cc;
-      --color-text: #24211b;
-      --color-text-muted: #67655f;
-      --color-text-faint: #9d9a92;
-      --color-primary: #0c5f63;
-      --color-primary-hover: #094c4f;
-      --color-text-inverse: #f8f7f3;
-      --shadow-sm: 0 1px 2px rgba(20, 18, 14, 0.06);
-      --shadow-md: 0 10px 30px rgba(20, 18, 14, 0.08);
+      --radius-full: 9999px;
+
+      --color-bg: #f5f9fa;
+      --color-surface: #fbfdfe;
+      --color-surface-2: #f7fbfc;
+      --color-surface-offset: #edf3f5;
+      --color-border: #cbd7dc;
+      --color-text: #1b2730;
+      --color-text-muted: #53656f;
+      --color-text-faint: #7e9099;
+      --color-primary: #234a66;
+      --color-primary-hover: #18384f;
+      --color-accent: #4d8b7a;
+      --color-text-inverse: #f5f9fa;
+
+      --shadow-sm: 0 1px 2px rgba(17, 33, 43, 0.08);
+      --shadow-md: 0 12px 30px rgba(17, 33, 43, 0.1);
+
       --font-display: 'Instrument Serif', Georgia, serif;
       --font-body: 'Manrope', system-ui, sans-serif;
+      --content-width: 1120px;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     [data-theme="dark"] {
-      --color-bg: #171614;
-      --color-surface: #1d1c1a;
-      --color-surface-2: #23221f;
-      --color-surface-offset: #2b2925;
-      --color-border: #393734;
-      --color-text: #d3d0ca;
-      --color-text-muted: #a09c95;
-      --color-text-faint: #77736d;
-      --color-primary: #71a9b0;
-      --color-primary-hover: #8abac0;
-      --color-text-inverse: #171614;
+      --color-bg: #101a21;
+      --color-surface: #15242d;
+      --color-surface-2: #1a2c36;
+      --color-surface-offset: #213844;
+      --color-border: #314956;
+      --color-text: #dce8ec;
+      --color-text-muted: #abc0c8;
+      --color-text-faint: #7f98a1;
+      --color-primary: #7aa8c7;
+      --color-primary-hover: #9ac0d8;
+      --color-accent: #78b19d;
+      --color-text-inverse: #101a21;
       --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.28);
+      --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.28);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; }
     html {
       scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      scroll-padding-top: 5rem;
     }
     body {
+      margin: 0;
       min-height: 100vh;
       font-family: var(--font-body);
       font-size: var(--text-base);
@@ -75,9 +92,20 @@
       background: var(--color-bg);
       color: var(--color-text);
     }
-    a { color: inherit; text-decoration: none; }
-    img, svg { display: block; max-width: 100%; }
-    button { font: inherit; cursor: pointer; border: none; background: none; }
+    img, svg { display: block; max-width: 100%; height: auto; }
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive), box-shadow var(--transition-interactive);
+    }
+    button {
+      font: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      transition: color var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive), box-shadow var(--transition-interactive);
+    }
+    p { max-width: 68ch; margin: 0; }
     :focus-visible {
       outline: 2px solid var(--color-primary);
       outline-offset: 3px;
@@ -87,17 +115,17 @@
     .skip-link {
       position: absolute;
       left: -9999px;
-      top: 1rem;
+      top: var(--space-4);
       background: var(--color-primary);
       color: var(--color-text-inverse);
-      padding: 0.75rem 1rem;
+      padding: 0.85rem 1rem;
       border-radius: var(--radius-md);
       z-index: 1000;
     }
-    .skip-link:focus { left: 1rem; }
+    .skip-link:focus { left: var(--space-4); }
 
     .container {
-      width: min(1100px, calc(100% - 2rem));
+      width: min(var(--content-width), calc(100% - 2rem));
       margin: 0 auto;
     }
 
@@ -106,7 +134,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(14px);
-      background: color-mix(in srgb, var(--color-bg) 86%, transparent);
+      background: color-mix(in srgb, var(--color-bg) 88%, transparent);
       border-bottom: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
     }
 
@@ -114,8 +142,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 76px;
       gap: var(--space-4);
+      min-height: 4.75rem;
+      padding: var(--space-2) 0;
     }
 
     .brand {
@@ -127,9 +156,10 @@
     }
 
     .brand-mark {
-      width: 34px;
-      height: 34px;
+      width: 2.125rem;
+      height: 2.125rem;
       color: var(--color-primary);
+      flex-shrink: 0;
     }
 
     .nav-links {
@@ -140,14 +170,17 @@
       font-size: var(--text-sm);
     }
 
+    .nav-links a:hover { color: var(--color-text); }
+
     .theme-toggle {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 44px;
-      height: 44px;
+      width: 2.75rem;
+      height: 2.75rem;
+      min-width: 2.75rem;
       border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
-      border-radius: 999px;
+      border-radius: var(--radius-full);
       background: var(--color-surface);
       box-shadow: var(--shadow-sm);
     }
@@ -157,19 +190,21 @@
     }
 
     .hero {
-      padding-top: clamp(4.5rem, 9vw, 8rem);
+      padding-top: clamp(5rem, 10vw, 8rem);
     }
 
-    .hero-grid {
+    .hero-grid,
+    .about-grid,
+    .contact-grid {
       display: grid;
       gap: var(--space-12);
-      align-items: end;
+      align-items: start;
     }
 
     .eyebrow {
       display: inline-block;
       margin-bottom: var(--space-4);
-      color: var(--color-primary);
+      color: var(--color-accent);
       font-size: var(--text-xs);
       font-weight: 700;
       letter-spacing: 0.16em;
@@ -179,56 +214,69 @@
     h1, h2 {
       font-family: var(--font-display);
       font-weight: 400;
-      line-height: 1.02;
+      line-height: 1.03;
       letter-spacing: -0.03em;
+      margin: 0;
     }
 
     h1 {
-      max-width: 11ch;
-      font-size: clamp(3rem, 7vw, 5.8rem);
+      max-width: 10ch;
+      font-size: var(--text-hero);
       margin-bottom: var(--space-6);
     }
 
     h2 {
-      font-size: clamp(2rem, 4vw, 3.1rem);
+      font-size: clamp(2rem, 4vw, 3rem);
       margin-bottom: var(--space-4);
     }
 
+    h3 {
+      margin: 0 0 var(--space-3);
+      font-size: var(--text-lg);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
     .hero-copy {
-      max-width: 62ch;
+      max-width: 60ch;
       color: var(--color-text-muted);
       font-size: var(--text-lg);
     }
 
-    .hero-actions {
+    .hero-actions,
+    .contact-links {
       display: flex;
       flex-wrap: wrap;
       gap: 0.875rem;
       margin-top: var(--space-8);
     }
 
-    .btn {
+    .btn,
+    .contact-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
+      min-height: 3rem;
       padding: 0.85rem 1.2rem;
-      border-radius: 999px;
+      border-radius: var(--radius-full);
       font-size: var(--text-sm);
       font-weight: 700;
+      border: 1px solid transparent;
     }
 
     .btn-primary {
       background: var(--color-primary);
       color: var(--color-text-inverse);
     }
+    .btn-primary:hover,
+    .btn-primary:focus-visible { background: var(--color-primary-hover); }
 
-    .btn-primary:hover { background: var(--color-primary-hover); }
-
-    .btn-secondary {
-      border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+    .btn-secondary,
+    .contact-link {
+      border-color: color-mix(in srgb, var(--color-text) 12%, transparent);
       background: var(--color-surface);
       color: var(--color-text);
+      box-shadow: var(--shadow-sm);
     }
 
     .hero-note {
@@ -236,17 +284,63 @@
       padding-top: var(--space-6);
       border-top: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
       color: var(--color-text-muted);
-      max-width: 64ch;
+      max-width: 62ch;
+    }
+
+    .portrait-wrap,
+    .summary-card,
+    .contact-box {
+      padding: var(--space-4);
+      background: linear-gradient(180deg, var(--color-surface), var(--color-surface-2));
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+    }
+
+    .portrait {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: calc(var(--radius-xl) - var(--space-4));
+      background: var(--color-surface-offset);
+    }
+
+    .summary-card {
+      padding: var(--space-8);
+    }
+
+    .summary-list {
+      display: grid;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
+    .summary-list div {
+      padding-top: var(--space-4);
+      border-top: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+    }
+
+    .meta {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: var(--text-sm);
+      letter-spacing: 0.02em;
+      color: var(--color-text-faint);
     }
 
     .section-intro {
       display: grid;
       gap: var(--space-3);
       margin-bottom: var(--space-10);
-      max-width: 54ch;
+      max-width: 56ch;
     }
 
-    .section-intro p { color: var(--color-text-muted); }
+    .section-intro p,
+    .card p,
+    .contact-copy,
+    .summary-card p {
+      color: var(--color-text-muted);
+    }
 
     .card-grid {
       display: grid;
@@ -263,75 +357,8 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .card h3 {
-      font-size: var(--text-lg);
-      margin-bottom: var(--space-3);
-      letter-spacing: -0.02em;
-    }
-
-    .card p { color: var(--color-text-muted); }
-
-    .split {
-      display: grid;
-      gap: var(--space-6);
-      align-items: start;
-    }
-
-    .statement {
-      padding: var(--space-8);
-      background: linear-gradient(180deg, var(--color-surface), var(--color-surface-2));
-      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-md);
-    }
-
-    .statement p {
-      color: var(--color-text-muted);
-      margin-top: var(--space-4);
-    }
-
-    .list {
-      display: grid;
-      gap: var(--space-4);
-    }
-
-    .list-item {
-      padding: var(--space-6);
-      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
-      border-radius: var(--radius-lg);
-      background: var(--color-surface);
-    }
-
-    .list-item strong {
-      display: block;
-      margin-bottom: 0.25rem;
-      font-size: var(--text-sm);
-      letter-spacing: 0.02em;
-    }
-
     .contact-box {
-      padding: var(--space-10);
-      background: var(--color-surface-offset);
-      border-radius: var(--radius-xl);
-      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.875rem;
-      margin-top: var(--space-6);
-    }
-
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      min-height: 46px;
-      padding: 0.8rem 1rem;
-      border-radius: 999px;
-      background: var(--color-surface);
-      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
-      font-weight: 600;
+      padding: var(--space-8);
     }
 
     .site-footer {
@@ -341,23 +368,31 @@
     }
 
     @media (min-width: 760px) {
-      .hero-grid { grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr); }
+      .hero-grid,
+      .contact-grid { grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr); }
+      .about-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr); }
       .card-grid .card:nth-child(1),
-      .card-grid .card:nth-child(2) { grid-column: span 6; }
+      .card-grid .card:nth-child(2),
       .card-grid .card:nth-child(3),
       .card-grid .card:nth-child(4) { grid-column: span 6; }
-      .card-grid .card:nth-child(5) { grid-column: span 12; }
-      .split { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
     }
 
     @media (max-width: 759px) {
-      .nav { align-items: flex-start; padding: 1rem 0; }
-      .nav-links { flex-wrap: wrap; justify-content: flex-end; }
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 1rem 0;
+      }
+      .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      * { transition: none !important; }
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
@@ -375,10 +410,10 @@
         <span>Quixote Vassilakis</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
         <a href="#work">Work</a>
-        <a href="#approach">Approach</a>
         <a href="#contact">Contact</a>
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme"></button>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode"></button>
       </nav>
     </div>
   </header>
@@ -387,19 +422,46 @@
     <section class="hero" id="top">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Organizational behavior · cultural research · coaching</span>
-          <h1>Helping organizations understand people more clearly.</h1>
-          <p class="hero-copy">Quixote Vassilakis works at the intersection of organizational behavior, cultural research, coaching, recruiting operations, and people analytics. He helps teams make better decisions about culture, talent, performance, and the systems that shape how people work.</p>
+          <span class="eyebrow">Skills transformation · learning · organizational development</span>
+          <h1>Quixote Vassilakis</h1>
+          <p class="hero-copy">I am a skills transformation and organizational development professional working across learning, talent, and data-informed program management. My background spans recruiting operations, career development, and organizational systems, with a focus on helping institutions build clearer and more effective ways of developing people.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact">Get in touch</a>
-            <a class="btn btn-secondary" href="#work">See focus areas</a>
+            <a class="btn btn-secondary" href="#work">View work</a>
           </div>
-          <p class="hero-note">I removed the photo and shifted the visual emphasis to typography, using Instrument Serif for headings and Manrope for body copy to create a more editorial, thoughtful feel than a standard sans-serif-only starter site.</p>
+          <p class="hero-note">This site is a simple introduction to who I am, the kind of work I do, and the professional themes that shape my experience so far.</p>
         </div>
-        <aside class="statement" aria-label="Professional summary">
-          <span class="eyebrow">Focus</span>
-          <h2>Research-informed, human-centered, operationally useful.</h2>
-          <p>From diagnosing workplace culture to improving recruiting systems and interpreting people data, the work centers on making organizations more legible, more intentional, and more effective.</p>
+        <aside class="portrait-wrap" aria-label="Portrait of Quixote Vassilakis">
+          <img class="portrait" src="https://drive.google.com/uc?export=view&id=1S67f6g7x4VwLUwpqIvubwNQjhqNhL5NM" alt="Portrait of Quixote Vassilakis" width="960" height="1200" loading="lazy" decoding="async">
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="section-intro">
+          <span class="eyebrow">About</span>
+          <h2>A corporate-first professional profile</h2>
+          <p>This version keeps the tone straightforward and credible. It is designed to introduce you clearly to colleagues, professional contacts, and anyone who wants a concise sense of your background and current focus.</p>
+          <p>Rather than presenting a broad portfolio, the page stays centered on your work in skills, learning, talent processes, and organizational effectiveness.</p>
+        </div>
+        <aside class="summary-card" aria-label="Professional summary">
+          <span class="eyebrow">Summary</span>
+          <h2>Grounded in institutions, people, and systems</h2>
+          <div class="summary-list">
+            <div>
+              <span class="meta">Current orientation</span>
+              <p>Skills transformation, learning, and organizational development.</p>
+            </div>
+            <div>
+              <span class="meta">Previous experience</span>
+              <p>Recruiting operations, career development, and talent-facing program work.</p>
+            </div>
+            <div>
+              <span class="meta">Working style</span>
+              <p>Thoughtful, practical, and attentive to how systems affect people in real settings.</p>
+            </div>
+          </div>
         </aside>
       </div>
     </section>
@@ -408,75 +470,53 @@
       <div class="container">
         <div class="section-intro">
           <span class="eyebrow">Work</span>
-          <h2>Areas of focus</h2>
-          <p>The site now presents your work through a cleaner text-first structure, which is often a stronger fit for advisory, research, and coaching practices than a photo-led homepage.</p>
+          <h2>Areas of experience</h2>
+          <p>These are the main threads of my work to date. Each reflects a part of how I have worked inside institutions to support people, processes, and organizational development.</p>
         </div>
         <div class="card-grid">
           <article class="card">
-            <h3>Organizational behavior</h3>
-            <p>Examining how teams function in practice, how decisions travel, and how incentives, norms, and leadership shape day-to-day behavior.</p>
+            <h3>Skills transformation</h3>
+            <p>Supporting work that helps organizations think more clearly about capability building, skill development, and how learning connects to evolving business needs.</p>
           </article>
           <article class="card">
-            <h3>Cultural research</h3>
-            <p>Using qualitative and mixed-method inquiry to understand organizational narratives, friction points, and the lived experience behind formal structures.</p>
-          </article>
-          <article class="card">
-            <h3>Coaching</h3>
-            <p>Supporting individuals and leaders as they navigate transition, influence, growth, and the relational demands of complex work.</p>
+            <h3>Learning and development</h3>
+            <p>Contributing to programs and initiatives that help people grow, adapt, and navigate change within complex institutional settings.</p>
           </article>
           <article class="card">
             <h3>Recruiting operations</h3>
-            <p>Improving hiring systems, workflows, and decision processes so talent teams can operate with more consistency, clarity, and efficiency.</p>
+            <p>Improving the systems, coordination, and workflows that support hiring processes and employer-facing talent activity.</p>
           </article>
           <article class="card">
-            <h3>People analytics</h3>
-            <p>Connecting data to questions that matter, translating patterns into practical insights for hiring, engagement, retention, and organizational design.</p>
+            <h3>Data-informed program management</h3>
+            <p>Using analysis and structured thinking to improve visibility, decision-making, and execution across people-related programs and processes.</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="approach">
-      <div class="container split">
-        <div class="section-intro">
-          <span class="eyebrow">Approach</span>
-          <h2>What the work is designed to do</h2>
-          <p>The font change gives the site more personality without making it feel ornamental, and it helps position the page closer to an independent research and advisory practice.</p>
-        </div>
-        <div class="list">
-          <div class="list-item">
-            <strong>Clarify</strong>
-            Surface the patterns, assumptions, and tensions that are shaping an organization beneath the surface.
-          </div>
-          <div class="list-item">
-            <strong>Translate</strong>
-            Turn research, observation, and data into language leaders and teams can actually use.
-          </div>
-          <div class="list-item">
-            <strong>Design</strong>
-            Build better processes for hiring, feedback, decision-making, and team development.
-          </div>
         </div>
       </div>
     </section>
 
     <section id="contact">
-      <div class="container">
+      <div class="container contact-grid">
         <div class="contact-box">
           <span class="eyebrow">Contact</span>
-          <h2>Start a conversation</h2>
-          <p style="color: var(--color-text-muted); max-width: 60ch;">If you want this to feel even more distinctive, the next step would be choosing between a more academic/editorial direction, a more executive-coaching direction, or a more minimal consulting direction. For now, this version keeps the structure simple and changes the typography substantially.</p>
+          <h2>Professional links</h2>
+          <p class="contact-copy">Replace the placeholders below with your preferred contact details. For this kind of simple site, email, LinkedIn, and GitHub are more than enough.</p>
           <div class="contact-links">
             <a class="contact-link" href="mailto:hello@example.com">hello@example.com</a>
             <a class="contact-link" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="contact-link" href="https://github.com/QVassilakis" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </div>
+        <aside class="summary-card" aria-label="Site notes">
+          <span class="eyebrow">Notes</span>
+          <h2>How to use this page</h2>
+          <p>This version works best as a lightweight public homepage: clear name, clear role, brief summary, and a few accurate areas of experience. It gives you a professional web presence without forcing the site to do too much.</p>
+        </aside>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">Quixote Vassilakis</div>
+    <div class="container">Quixote Vassilakis · New York</div>
   </footer>
 
   <script>
@@ -504,3 +544,4 @@
   </script>
 </body>
 </html>
+HTML && ls -l output | tail -n 5
